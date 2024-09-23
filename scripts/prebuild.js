@@ -39,7 +39,7 @@ async function convertEpsToJpg() {
         const outputFilePath = path.join(distImageDir, `${fileName}.jpg`);
 
         // Comando ImageMagick para converter .eps para .jpg
-        const command = `magick convert "${file}" -density 150 "${outputFilePath}"`;
+        const command = `convert "${file}" -density 150 "${outputFilePath}"`;
 
         console.log(`Converting ${file} to ${outputFilePath}`);
         const { stdout, stderr } = await execAsync(command);
@@ -178,7 +178,7 @@ async function compressPdfs() {
         const outputFilePath = path.join(distPdfDir, fileName);
 
         // Comando para compactar PDF
-        const command = `magick convert "${file}" -density 150 "${outputFilePath}"`;
+        const command = `convert "${file}" -density 150 "${outputFilePath}"`;
 
         console.log(`Compressing ${file} to ${outputFilePath}`);
         const { stdout, stderr } = await execAsync(command);
